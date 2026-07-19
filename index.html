@@ -1,43 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-		/>
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>Twig-Layout mit Slots | Vortrag Contao Summit 2026</title>
 
-		<link rel="stylesheet" href="dist/reset.css" />
-		<link rel="stylesheet" href="dist/reveal.css" />
-		<link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white_custom_ml.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <!-- Titelfolie Vortrag -->
+        <section>
+            <h1>Twig-Layout mit Slots</h1>
+            <p>Einsatz von modernem CSS mit neuem Markup</p>
+        </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="dist/plugin/notes.js"></script>
-		<script src="dist/plugin/markdown.js"></script>
-		<script src="dist/plugin/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        <!-- Einleitung - Was erwartet Euch -->
+        <section>
+            <h2>Was erwartet Euch</h2>
+            <ul>
+                <li>Twig-Layout mit Slots oder FE-Page</li>
+                <Li>Twig-Layout mit Slots</Li>
+                <li>Beispielseite mit neuem Twig-Layout</li>
+            </ul>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-			});
-		</script>
-	</body>
+        <!-- Twig-Layout mit Slots oder FE-Page -->
+        <section>
+            <section>
+                <h1>Twig-Layout mit Slots oder FE&#8209;Page</h1>
+                <p>Sollte ich in Contao 5.7 Twig-Layouts mit Slots nutzen? </p>
+            </section>
+            <!--Twig-Layouts mit Slots - Vorteile -->
+            <section>
+                <h3>Twig-Layouts mit Slots - Vorteile</h3>
+                <ul>
+                    <li>Verlagerung der gesamten Konfiguration ins Template</li>
+                    <li>sehr flexibel</li>
+                    <li>versionierbar z.B. auf Git</li>
+                    <li>gut wiederverwendbar in anderen Projekten</li>
+                    <li>neues Markup für modernes Webdesign</li>
+                </ul>
+            </section>
+            <!--Twig-Layouts mit Slots - Nachteile -->
+            <section>
+                <h3>Twig-Layouts mit Slots - Nachteile</h3>
+                <ul>
+                    <li>neues Markup
+                        <ul>
+                            <li>deshalb CSS-Anpassungen notwendig</li>
+                            <li>alternativ Template-Anpassungen notwendig (altes Markup generieren)</li>
+                        </ul>
+                    </li>
+                    <li>genutztes CSS und JS nicht einfach im Backend wählbar</li>
+                    <li>noch experimentell</li>
+                </ul>
+            </section>
+            <!-- FE-Page - Vorteile -->
+            <section>
+                <h3>FE-Page - Vorteile</h3>
+                <ul>
+                    <li>kann als HTML5-Template oder Twig Template angepasst werden</li>
+                    <li>vertrautes Markup</li>
+                    <li>vertraute Konfiguration</li>
+                    <li>fast alle Einstellungen (wie z.B. CSS und Javascript) im Backend einstellbar</li>
+                    <li>keine CSS-Anpassungen erforderlich beim Update von Contao 5.3</li>
+                </ul>
+            </section>
+            <!-- FE-Page - Nachteile -->
+            <section>
+                <h3>FE-Page - Nachteile</h3>
+                <ul>
+                    <li>wird in Contao 6 als HTML5 definitiv wegfallen</li>
+                    <li>unklar ob bzw. wie lange es in Contao 6 als Twig-Template noch verfügbar sein wird</li>
+                    <li>Markup schon etwas angestaubt (z.B. z.T. viele für modernes CSS nicht benötigte Div-Tags)</li>
+                </ul>
+            </section>
+        </section>
+        <!-- Twig-Layout mit Slots -->
+        <section>
+
+            <section>
+                <h1>Twig-Layout mit Slots</h1>
+                <p>Anpassungen über das Templatestudio</p>
+            </section>
+            <section>
+                <h2>CSS einbinden</h2>
+            </section>
+            <section>
+                <h2>Javascript einbinden</h2>
+            </section>
+            <section>
+                <h2>Javascript- oder jQuery-Templates einbinden</h2>
+            </section>
+            <section>
+                <h2>zusätzliche Slots verwenden</h2>
+            </section>
+        </section>
+        <!-- Beispielseite mit neuem Twig-Layout -->
+        <section>
+            <section>
+                <h1>Beispielseite mit neuem Twig-Layout</h1>
+                <p>...</p>
+            </section>
+        </section>
+        <!-- Codebeispiel -->
+        <section>
+            <h2>Codebeispiel</h2>
+            <h3>...</h3>
+            <pre>
+                    <code data-trim data-noescape>
+                       code
+                    </code>
+                </pre>
+        </section>
+
+
+        <!-- Zusammenfassung -->
+        <section>
+
+            <section>
+                <h1>Zusammenfassung</h1>
+            </section>
+            <section>
+                <ul>
+                    <li>Twig-Layouts mit Slots sind zukunftsfähig</li>
+                    <li>erleichtern den Einsatz von modernem CSS</li>
+                    <li>sind noch experimentell, können sich also noch ändern</li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Noch Fragen -->
+        <section>
+            <h1>Noch Fragen?</h1>
+        </section>
+
+        <!-- Danke für die Aufmerksamkeit -->
+        <section>
+            <h1>Danke für die Aufmerksamkeit</h1>
+        </section>
+    </div>
+</div>
+<script src="dist/reveal.js"></script>
+<script src="dist/plugin/notes.js"></script>
+<script src="dist/plugin/markdown.js"></script>
+<script src="dist/plugin/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+        // view: 'scroll',
+        //scrollProgress: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    });
+    // Reveal.configure({ showNotes: true });
+</script>
+</body>
 </html>
