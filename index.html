@@ -26,32 +26,33 @@
         <section>
             <h2>Was erwartet Euch</h2>
             <ul>
-                <li>Twig-Layout mit Slots oder FE-Page</li>
-                <Li>Twig-Layout mit Slots</Li>
+                <li>Sollte ich in Contao 5.7 das Twig-Layout einsetzen?</li>
+                <Li>Twig-Layout</Li>
                 <li>Beispielseite mit neuem Twig-Layout</li>
             </ul>
         </section>
 
-        <!-- Twig-Layout mit Slots oder FE-Page -->
+        <!-- Sollte ich in Contao 5.7 Twig-Layouts nutzen? -->
         <section>
             <section>
-                <h1>Twig-Layout mit Slots oder FE&#8209;Page</h1>
-                <p>Sollte ich in Contao 5.7 Twig-Layouts mit Slots nutzen? </p>
+                <h2>Sollte ich in Contao 5.7 Twig-Layouts nutzen? </h2>
+                <p>Twig-Layout oder FE&#8209;Page</p>
             </section>
-            <!--Twig-Layouts mit Slots - Vorteile -->
+            <!--Twig-Layouts - Vorteile -->
             <section>
-                <h3>Twig-Layouts mit Slots - Vorteile</h3>
+                <h3>Twig-Layouts - Vorteile</h3>
                 <ul>
                     <li>Verlagerung der gesamten Konfiguration ins Template</li>
                     <li>sehr flexibel</li>
                     <li>versionierbar z.B. auf Git</li>
                     <li>gut wiederverwendbar in anderen Projekten</li>
                     <li>neues Markup für modernes Webdesign</li>
+                    <li>Cache-Busting für CSS und Javascript durch die Asset-Funktion</li>
                 </ul>
             </section>
-            <!--Twig-Layouts mit Slots - Nachteile -->
+            <!--Twig-Layouts - Nachteile -->
             <section>
-                <h3>Twig-Layouts mit Slots - Nachteile</h3>
+                <h3>Twig-Layouts - Nachteile</h3>
                 <ul>
                     <li>neues Markup
                         <ul>
@@ -84,30 +85,64 @@
                 </ul>
             </section>
         </section>
-        <!-- Twig-Layout mit Slots -->
+        <!-- Twig-Layout -->
         <section>
 
             <section>
-                <h1>Twig-Layout mit Slots</h1>
+                <h2>Twig-Layout</h2>
                 <p>Anpassungen über das Templatestudio</p>
             </section>
+            <!-- CSS einbinden -->
             <section>
-                <h2>CSS einbinden</h2>
+                <h3>CSS einbinden</h3>
+                <h4>statisch</h4>
+                <pre>
+                    <code data-trim data-noescape>
+                       &lt;link href="/files/theme/css/standard.css" rel="stylesheet" &gt;
+                    </code>
+                </pre>
+                <h4>mit Cache-Busting</h4>
+                <pre>
+                    <code data-trim data-noescape>
+                       &lt;link href="{{asset('theme/css/standard.css', contao_vfs.files') }} rel="stylesheet" &gt;
+                    </code>
+                </pre>
             </section>
+            <!-- JS einbinden -->
             <section>
-                <h2>Javascript einbinden</h2>
+                <h3>Javascript einbinden</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                       &lt;script src="{{ asset('js/jquery.js', 'contao-components/jquery') }}"&gt;&lt;/script&gt;
+                    </code>
+                </pre>
             </section>
+            <!-- Javascript- oder jQuery-Templates einbinden -->
             <section>
-                <h2>Javascript- oder jQuery-Templates einbinden</h2>
+                <h3>Javascript- oder jQuery-Templates einbinden</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                        {{ include('@Contao/j_accordion') }}
+                        {{ include('@Contao/j_colorbox') }}
+                        {{ include('@Contao/j_tablesort') }}
+                        {{ include('@Contao/js_slider') }}
+                        {{ include('@Contao/js_autofocus') }}
+                    </code>
+                </pre>
             </section>
+            <!-- zusätzliche Slots verwenden -->
             <section>
-                <h2>zusätzliche Slots verwenden</h2>
+                <h3>zusätzliche Slots verwenden</h3>
+            </section>
+            <!-- Erweiterung nutzen -->
+            <section>
+                <h3>Erweiterung nutzen</h3>
             </section>
         </section>
         <!-- Beispielseite mit neuem Twig-Layout -->
         <section>
             <section>
-                <h1>Beispielseite mit neuem Twig-Layout</h1>
+                <h2>Beispielseite mit neuem Twig-Layout</h2>
                 <p>...</p>
             </section>
         </section>
@@ -127,25 +162,26 @@
         <section>
 
             <section>
-                <h1>Zusammenfassung</h1>
+                <h2>Zusammenfassung</h2>
             </section>
             <section>
                 <ul>
-                    <li>Twig-Layouts mit Slots sind zukunftsfähig</li>
-                    <li>erleichtern den Einsatz von modernem CSS</li>
-                    <li>sind noch experimentell, können sich also noch ändern</li>
+                    <li>Twig-Layouts sind zukunftsfähig</li>
+                    <li>generiertes Markup erleichtert den Einsatz von modernem CSS</li>
+                    <li>noch experimentell, können sich also noch ändern</li>
+                    <li>Einsatz nicht um jeden Preis</li>
                 </ul>
             </section>
         </section>
 
         <!-- Noch Fragen -->
         <section>
-            <h1>Noch Fragen?</h1>
+            <h2>Noch Fragen?</h2>
         </section>
 
         <!-- Danke für die Aufmerksamkeit -->
         <section>
-            <h1>Danke für die Aufmerksamkeit</h1>
+            <h2>Danke für die Aufmerksamkeit</h2>
         </section>
     </div>
 </div>
