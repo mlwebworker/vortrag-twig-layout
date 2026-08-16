@@ -133,10 +133,13 @@
             <!-- zusätzliche Slots verwenden -->
             <section>
                 <h3>zusätzliche Slots verwenden</h3>
-            </section>
-            <!-- Erweiterung nutzen -->
-            <section>
-                <h3>Erweiterung nutzen</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                            {% slot meinSlot %}
+                                <div clsss="mein-slot">{{ slot() }}</div>
+                            {% endslot %}
+                    </code>
+                </pre>
             </section>
         </section>
         <!-- Beispielseite mit neuem Twig-Layout -->
