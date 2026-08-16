@@ -34,18 +34,19 @@
         <section>
             <section>
                 <h2>Twig-Layout für eine Beispielseite nutzen</h2>
-                <p>Anpassungen über das Templatestudio</p>
+
             </section>
             <!-- CSS einbinden -->
             <section>
-                <h3>CSS einbinden</h3>
-                <h4>statisch</h4>
+                <h3>Anpassungen über das Templatestudio</h3>
+                <h4>CSS einbinden</h4>
+                <h5>statisch</h5>
                 <pre>
                     <code data-trim data-noescape>
                        &lt;link href="/files/theme/css/standard.css" rel="stylesheet" &gt;
                     </code>
                 </pre>
-                <h4 class="fragment">mit Cache-Busting</h4>
+                <h5 class="fragment">mit Cache-Busting</h5>
                 <pre class="fragment">
                     <code data-trim data-noescape>
                        &lt;link href="{{asset('theme/css/standard.css', contao_vfs.files') }} rel="stylesheet" &gt;
