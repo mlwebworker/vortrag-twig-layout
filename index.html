@@ -26,21 +26,76 @@
         <section>
             <h2>Was erwartet Euch</h2>
             <ul>
+                <li>Twig-Layout für eine Beispielseite nutzen</li>
                 <li>Sollte ich in Contao 5.7 das Twig-Layout einsetzen?</li>
-                <Li>Twig-Layout</Li>
-                <li>Beispielseite mit neuem Twig-Layout</li>
             </ul>
         </section>
+        <!-- Twig-Layout für eine Beispielseite nutzen -->
+        <section>
+            <section>
+                <h2>Twig-Layout für eine Beispielseite nutzen</h2>
+            </section>
 
+            <!-- CSS einbinden -->
+            <section>
+                <h3>Anpassungen über das Templatestudio</h3>
+                <h4>CSS einbinden</h4>
+                <h5>statisch</h5>
+                <pre>
+                    <code data-trim data-noescape>
+                       &lt;link href="/files/theme/css/standard.css" rel="stylesheet" &gt;
+                    </code>
+                </pre>
+                <h5 class="fragment">mit Cache-Busting</h5>
+                <pre class="fragment">
+                    <code data-trim data-noescape>
+                       &lt;link href="{{asset('theme/css/standard.css', contao_vfs.files') }} rel="stylesheet" &gt;
+                    </code>
+                </pre>
+            </section>
+
+            <!-- JS einbinden -->
+            <section>
+                <h3>Javascript einbinden</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                       &lt;script src="{{ asset('js/jquery.js', 'contao-components/jquery') }}"&gt;&lt;/script&gt;
+                    </code>
+                </pre>
+            </section>
+
+            <!-- Javascript- oder jQuery-Templates einbinden -->
+            <section>
+                <h3>Javascript- oder jQuery-Templates einbinden</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                        {{ include('@Contao/j_glightbox') }}
+                    </code>
+                </pre>
+            </section>
+
+            <!-- zusätzliche Slots verwenden -->
+            <section>
+                <h3>zusätzliche Slots verwenden</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                            {% slot headerimage %}
+                                <div class="header-image">{{ slot() }}</div>
+                            {% endslot %}
+                    </code>
+                </pre>
+            </section>
+        </section>
         <!-- Sollte ich in Contao 5.7 Twig-Layouts nutzen? -->
         <section>
             <section>
                 <h2>Sollte ich in Contao 5.7 Twig-Layouts nutzen? </h2>
                 <p>Twig-Layout oder FE&#8209;Page</p>
             </section>
+
             <!--Twig-Layouts - Vorteile -->
             <section>
-                <h3>Twig-Layouts - Vorteile</h3>
+                <h3>Verwendung Twig-Layouts - Vorteile</h3>
                 <ul>
                     <li>Verlagerung der gesamten Konfiguration ins Template</li>
                     <li>sehr flexibel</li>
@@ -50,6 +105,7 @@
                     <li>Cache-Busting für CSS und Javascript durch die Asset-Funktion</li>
                 </ul>
             </section>
+
             <!--Twig-Layouts - Nachteile -->
             <section>
                 <h3>Twig-Layouts - Nachteile</h3>
@@ -62,104 +118,35 @@
                     </li>
                     <li>genutztes CSS und JS nicht einfach im Backend wählbar</li>
                     <li>noch experimentell</li>
+                    <li>genutzte Erweiterungen sind eventuell (noch) nicht auf die Verwendung von Twig-Layouts vorbereitet</li>
                 </ul>
             </section>
+
             <!-- FE-Page - Vorteile -->
             <section>
-                <h3>FE-Page - Vorteile</h3>
+                <h3>Verwendung FE-Page - Vorteile</h3>
                 <ul>
                     <li>kann als HTML5-Template oder Twig Template angepasst werden</li>
+                    <li>wird in Contao 6 als Twig Template noch unterstützt</li>
                     <li>vertrautes Markup</li>
                     <li>vertraute Konfiguration</li>
                     <li>fast alle Einstellungen (wie z.B. CSS und Javascript) im Backend einstellbar</li>
                     <li>keine CSS-Anpassungen erforderlich beim Update von Contao 5.3</li>
                 </ul>
             </section>
+
             <!-- FE-Page - Nachteile -->
             <section>
                 <h3>FE-Page - Nachteile</h3>
                 <ul>
                     <li>wird in Contao 6 als HTML5 definitiv wegfallen</li>
-                    <li>unklar ob bzw. wie lange es in Contao 6 als Twig-Template noch verfügbar sein wird</li>
+                    <li>unklar wie lange es in Contao 6 als Twig-Template noch verfügbar sein wird</li>
+                    <li>Umstellung muss bei Wegfall des FE-Page-Templates zwangsweise umgestellt werden</li>
                     <li>Markup schon etwas angestaubt (z.B. z.T. viele für modernes CSS nicht benötigte Div-Tags)</li>
                 </ul>
             </section>
-        </section>
-        <!-- Twig-Layout -->
-        <section>
 
-            <section>
-                <h2>Twig-Layout</h2>
-                <p>Anpassungen über das Templatestudio</p>
-            </section>
-            <!-- CSS einbinden -->
-            <section>
-                <h3>CSS einbinden</h3>
-                <h4>statisch</h4>
-                <pre>
-                    <code data-trim data-noescape>
-                       &lt;link href="/files/theme/css/standard.css" rel="stylesheet" &gt;
-                    </code>
-                </pre>
-                <h4 class="fragment">mit Cache-Busting</h4>
-                <pre class="fragment">
-                    <code data-trim data-noescape>
-                       &lt;link href="{{asset('theme/css/standard.css', contao_vfs.files') }} rel="stylesheet" &gt;
-                    </code>
-                </pre>
-            </section>
-            <!-- JS einbinden -->
-            <section>
-                <h3>Javascript einbinden</h3>
-                <pre>
-                    <code data-trim data-noescape>
-                       &lt;script src="{{ asset('js/jquery.js', 'contao-components/jquery') }}"&gt;&lt;/script&gt;
-                    </code>
-                </pre>
-            </section>
-            <!-- Javascript- oder jQuery-Templates einbinden -->
-            <section>
-                <h3>Javascript- oder jQuery-Templates einbinden</h3>
-                <pre>
-                    <code data-trim data-noescape>
-                        {{ include('@Contao/j_accordion') }}
-                        {{ include('@Contao/j_colorbox') }}
-                        {{ include('@Contao/j_tablesort') }}
-                        {{ include('@Contao/js_slider') }}
-                        {{ include('@Contao/js_autofocus') }}
-                    </code>
-                </pre>
-            </section>
-            <!-- zusätzliche Slots verwenden -->
-            <section>
-                <h3>zusätzliche Slots verwenden</h3>
-                <pre>
-                    <code data-trim data-noescape>
-                            {% slot meinSlot %}
-                                <div clsss="mein-slot">{{ slot() }}</div>
-                            {% endslot %}
-                    </code>
-                </pre>
-            </section>
         </section>
-        <!-- Beispielseite mit neuem Twig-Layout -->
-        <section>
-            <section>
-                <h2>Beispielseite mit neuem Twig-Layout</h2>
-                <p>...</p>
-            </section>
-        </section>
-        <!-- Codebeispiel -->
-        <section>
-            <h2>Codebeispiel</h2>
-            <h3>...</h3>
-            <pre>
-                    <code data-trim data-noescape>
-                       code
-                    </code>
-                </pre>
-        </section>
-
 
         <!-- Zusammenfassung -->
         <section>
