@@ -27,7 +27,7 @@
             <h2>Was erwartet Euch</h2>
             <ul>
                 <li>Twig-Layout nutzen</li>
-                <li>modernes CSS mit Twig-Layout</li>
+                <li>Modernes CSS mit Twig-Layout</li>
                 <li>Sollte ich in Contao 5.7 das Twig-Layout einsetzen?</li>
             </ul>
         </section>
@@ -35,6 +35,7 @@
         <section>
             <section>
                 <h2>Twig-Layout nutzen</h2>
+                <p>Anpassungen über das Templatestudio</p>
             </section>
 
             <!-- CSS einbinden -->
@@ -89,19 +90,53 @@
         <!-- modernes CSS mit Twig-Layout -->
         <section>
             <section>
-                <h2>modernes CSS mit Twig-Layout</h2>
+                <h2>Modernes CSS mit Twig-Layout</h2>
+                <p>Flexibles Layout</p>
             </section>
 
-            <!-- CSS einbinden -->
             <section>
-                <h3>Flexibles Layout mit Aside</h3>
+               <h3>Body als Grid-Container</h3>
+               <pre>
+                   <code data-trim data-noescape>
+                     body {
+                        display    : grid;
+                        min-height : 100vh;
+                        @supports (min-height: 100dvh) {
+	                        min-height : 100dvh;
+                        }
 
-                <pre>
-                    <code data-trim data-noescape>
-
+	                    grid-template-rows  : min-content 1fr min-content;
+	                    grid-template-areas :
+                            "header"
+                            "main"
+                            "footer";
+                     }
                     </code>
                 </pre>
-
+            </section>
+            <section>
+                <h3>Ausgabe von Header, Main und Footer</h3>
+                <pre>
+                   <code data-trim data-noescape>
+                     header {
+                        grid-area: header;
+                     }
+                    </code>
+                </pre>
+                <pre>
+                   <code data-trim data-noescape>
+                     main {
+                        grid-area: main;
+                     }
+                    </code>
+                </pre>
+                <pre>
+                   <code data-trim data-noescape>
+                     footer {
+                        grid-area: footer;
+                     }
+                    </code>
+                </pre>
             </section>
         </section>
 
@@ -114,7 +149,7 @@
 
             <!--Twig-Layouts - Vorteile -->
             <section>
-                <h3>Verwendung Twig-Layouts - Vorteile</h3>
+                <h3>Twig-Layouts - Vorteile</h3>
                 <ul>
                     <li>Verlagerung der gesamten Konfiguration ins Template</li>
                     <li>sehr flexibel</li>
@@ -132,18 +167,18 @@
                     <li>neues Markup
                         <ul>
                             <li>deshalb CSS-Anpassungen notwendig</li>
-                            <li>alternativ Template-Anpassungen notwendig (altes Markup generieren)</li>
+                            <li>alternativ Template-Anpassungen notwendig um altes Markup zu generieren</li>
                         </ul>
                     </li>
                     <li>genutztes CSS und JS nicht einfach im Backend wählbar</li>
                     <li>noch experimentell</li>
-                    <li>genutzte Erweiterungen sind eventuell (noch) nicht auf die Verwendung von Twig-Layouts vorbereitet</li>
+                    <li>genutzte Erweiterungen sind eventuell (noch) nicht auf die Verwendung vom Twig-Layout vorbereitet</li>
                 </ul>
             </section>
 
             <!-- FE-Page - Vorteile -->
             <section>
-                <h3>Verwendung FE-Page - Vorteile</h3>
+                <h3>FE-Page - Vorteile</h3>
                 <ul>
                     <li>kann als HTML5-Template oder Twig Template angepasst werden</li>
                     <li>wird in Contao 6 als Twig Template noch unterstützt</li>
@@ -160,7 +195,7 @@
                 <ul>
                     <li>wird in Contao 6 als HTML5 definitiv wegfallen</li>
                     <li>unklar wie lange es in Contao 6 als Twig-Template noch verfügbar sein wird</li>
-                    <li>Umstellung muss bei Wegfall des FE-Page-Templates zwangsweise umgestellt werden</li>
+                    <li>Umstellung muss bei Wegfall des FE-Page-Templates zwangsweise erfolgen</li>
                     <li>Markup schon etwas angestaubt (z.B. z.T. viele für modernes CSS nicht benötigte Div-Tags)</li>
                 </ul>
             </section>
@@ -169,8 +204,7 @@
 
         <!-- Zusammenfassung -->
         <section>
-
-            <section>
+             <section>
                 <h2>Zusammenfassung</h2>
             </section>
             <section>
