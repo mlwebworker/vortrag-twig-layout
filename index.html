@@ -138,9 +138,7 @@
                 </pre>
             </section>
             <section>
-                <h3>12er Grid</h3>
-               
-                <p> <a href="https://www.youtube.com/watch?v=Bv-DqNmpvtA" target="_blank">Modernes CSS (Grid, Subgrid, Flex und Co) in Contao nutzen</a></p>
+                <h3>12er Grid für Main</h3>
                 <pre>
                    <code data-trim data-noescape>
                     main {
@@ -156,6 +154,90 @@
                         grid-template-columns : subgrid;
                         > :not(.fullwidth) {
                           grid-column : 2 / span 12;
+                        }
+                      }
+                    }
+                    </code>
+                </pre>
+                <p>weiterführende Infos: <a href="https://www.youtube.com/watch?v=Bv-DqNmpvtA" target="_blank">Konferenzvortrag 2025</a></p>
+            </section>
+            <section>
+                <h3>Layout mit Aside</h3>
+                <pre>
+                   <code data-trim data-noescape>
+                    body {
+                      display    : grid;
+                      min-height : 100vh;
+                      @supports (min-height: 100dvh) {
+                        min-height : 100dvh;
+                      }
+
+                        grid-template-rows  : min-content 1fr min-content;
+                        grid-template-areas :
+                        "header"
+                        "main"
+                        "footer";
+
+                      &.two-column-left {
+                        grid-template-rows  : min-content 1fr min-content min-content;
+                        grid-template-areas :
+                        "header"
+                        "main"
+                        "aside-left"
+                        "footer";
+                        /* xLarge */
+                        @media only screen and (min-width : 64em) {
+                          grid-template-rows    : min-content 1fr min-content;
+                          grid-template-columns :minmax(0, 30rem) minmax(40rem, 1fr);
+                          grid-template-areas   :
+                          "header header"
+                          "aside-left main"
+                          "footer footer";
+                        }
+                      }
+                      &.two-column-right {
+                        grid-template-rows  : min-content 1fr min-content min-content;
+                        grid-template-areas :
+                        "header"
+                        "main"
+                        "aside-right"
+                        "footer";
+                        /* xLarge */
+                        @media only screen and (min-width : 64em) {
+                          grid-template-rows    : min-content 1fr min-content;
+                          grid-template-columns : minmax(40rem, 1fr) minmax(0, 30rem) ;
+                          grid-template-areas   :
+                          "header header"
+                          "main aside-right"
+                          "footer footer";
+                        }
+                      }
+                      &.multi-column {
+                        grid-template-rows  : min-content 1fr min-content min-content min-content;
+                        grid-template-areas :
+                        "header"
+                        "main"
+                        "aside-left"
+                        "aside-right"
+                        "footer";
+                        /* xLarge */
+                        @media only screen and (min-width : 64em) {
+                          grid-template-rows    : min-content 1fr min-content min-content;
+                          grid-template-columns :minmax(0, 30rem) minmax(40rem, 1fr);
+                          grid-template-areas   :
+                          "header header"
+                          "aside-left main"
+                          "aside-right aside-right"
+                          "footer footer";
+                        }
+                        /* xxLarge */
+                        @media only screen and (min-width : 80em) {
+                          grid-template-rows    : min-content 1fr min-content;
+                          grid-template-columns : minmax(0, 30rem) minmax(40rem, 1fr) minmax(0, 30rem);
+                          grid-template-areas   :
+                          "header header header"
+                          "aside-left main aside-right"
+                          "footer footer footer";
                         }
                       }
                     }
