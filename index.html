@@ -86,18 +86,25 @@
                         {{ include('@Contao/js_glightbox') }}
                     </code>
                 </pre>
-            </section>   <section>
-        </section>
-
-
+            </section>   
 
             <!-- zusätzliche Slots verwenden -->
             <section>
                 <h3>zusätzliche Slots verwenden</h3>
                 <pre>
                     <code data-trim data-noescape>
-                            {% slot headerimage %}
-                                <div class="header-image">{{ slot() }}</div>
+                            {% slot cta %}
+                                <div class="cta">{{ slot() }}</div>
+                            {% endslot %}
+                    </code>
+                </pre>
+                <pre class="fragment">
+                    <code data-trim data-noescape>
+                            {% slot cta %}
+                                <div class="cta">
+                                    {{ slot() }}
+                                    <p>Wir freuen uns auf ihren Anruf.</p>
+                                </div>
                             {% endslot %}
                     </code>
                 </pre>
