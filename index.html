@@ -115,9 +115,9 @@
             <section>
                 <h2>Twig-Layout mit modernem CSS</h2>
             </section>
-
+            <!-- einspaltig -->
             <section>
-               <h3>Body als Grid-Container</h3>
+               <h3>Einspaltiges Layout</h3>
                <pre>
                    <code data-trim data-noescape>
                      body {
@@ -134,32 +134,62 @@
                      }
                    </code>
                 </pre>
-            </section>
-            <section>
-                <h3>Ausgabe von Header, Main und Footer</h3>
-                <pre>
+
+                <pre class="fragment">
                    <code data-trim data-noescape>
                      header {
                         grid-area: header;
                      }
-                    </code>
-                </pre>
-                <pre>
-                   <code data-trim data-noescape>
+
                      main {
                         grid-area: main;
                      }
-                    </code>
-                </pre>
-                <pre>
-                   <code data-trim data-noescape>
+
                      footer {
                         grid-area: footer;
                      }
                     </code>
                 </pre>
             </section>
+            <!-- einspaltig mit CTA -->
+            <section>
+                <h3>Einspaltiges Layout mit CTA</h3>
+                <pre>
+                   <code data-trim data-noescape>
+                     body {
+                        display    : grid;
+                        min-height : 100vh;
+                        @supports (min-height: 100dvh) {
+	                        min-height : 100dvh;
+                        }
+	                    grid-template-rows  : min-content 1fr min-content min-content;
+	                    grid-template-areas :
+                            "header"
+                            "main"
+                            "cta"
+                            "footer";
+                     }
+                   </code>
+                </pre>
 
+                <pre class="fragment">
+                   <code data-trim data-noescape>
+                     header {
+                        grid-area: header;
+                     }
+                     main {
+                        grid-area: main;
+                     }
+                     footer {
+                        grid-area: footer;
+                     }
+                     .cta {
+                       grid-area: cta;
+                     }
+                   </code>
+                </pre>
+            </section>
+            <!-- mehrspaltig -->
             <section>
                 <h3>Layout mit Aside</h3>
                 <pre>
@@ -170,9 +200,8 @@
                       @supports (min-height: 100dvh) {
                         min-height : 100dvh;
                       }
-
-                        grid-template-rows  : min-content 1fr min-content;
-                        grid-template-areas :
+                      grid-template-rows  : min-content 1fr min-content;
+                      grid-template-areas :
                         "header"
                         "main"
                         "footer";
@@ -184,7 +213,6 @@
                         "main"
                         "aside-left"
                         "footer";
-                        /* xLarge */
                         @media only screen and (min-width : 64em) {
                           grid-template-rows    : min-content 1fr min-content;
                           grid-template-columns :minmax(0, 30rem) minmax(40rem, 1fr);
@@ -194,6 +222,7 @@
                           "footer footer";
                         }
                       }
+
                       &.two-column-right {
                         grid-template-rows  : min-content 1fr min-content min-content;
                         grid-template-areas :
@@ -201,7 +230,6 @@
                         "main"
                         "aside-right"
                         "footer";
-                        /* xLarge */
                         @media only screen and (min-width : 64em) {
                           grid-template-rows    : min-content 1fr min-content;
                           grid-template-columns : minmax(40rem, 1fr) minmax(0, 30rem) ;
@@ -219,7 +247,6 @@
                         "aside-left"
                         "aside-right"
                         "footer";
-                        /* xLarge */
                         @media only screen and (min-width : 64em) {
                           grid-template-rows    : min-content 1fr min-content min-content;
                           grid-template-columns :minmax(0, 30rem) minmax(40rem, 1fr);
@@ -229,7 +256,6 @@
                           "aside-right aside-right"
                           "footer footer";
                         }
-                        /* xxLarge */
                         @media only screen and (min-width : 80em) {
                           grid-template-rows    : min-content 1fr min-content;
                           grid-template-columns : minmax(0, 30rem) minmax(40rem, 1fr) minmax(0, 30rem);
@@ -241,6 +267,25 @@
                       }
                     }
                     </code>
+                </pre>
+                <pre class="fragment">
+                   <code data-trim data-noescape>
+                     header {
+                        grid-area: header;
+                     }
+                     main {
+                        grid-area: main;
+                     }
+                     footer {
+                        grid-area: footer;
+                     }
+                     .aside-left {
+                       grid-area: aside-left;
+                     }
+                     .aside-right {
+                       grid-area: aside-right;
+                     }
+                   </code>
                 </pre>
             </section>
             <section>
