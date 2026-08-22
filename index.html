@@ -77,6 +77,7 @@
                     <code data-trim data-noescape>
                         {{ include('@Contao/j_accordion') }}
                         {{ include('@Contao/j_tablesort') }}
+                        {{ include('@Contao/js_accordion') }}
                         {{ include('@Contao/js_slider') }}
                         {{ include('@Contao/js_autofocus') }}
                     </code>
@@ -94,7 +95,7 @@
                 <pre>
                     <code data-trim data-noescape>
                             {% slot cta %}
-                                <div class="cta">{{ slot() }}</div>
+                                &lt;div class="cta"&gt;{{ slot() }}&lt;/div&gt;
                             {% endslot %}
                     </code>
                 </pre>
@@ -103,7 +104,7 @@
                             {% slot cta %}
                                 <div class="cta">
                                     {{ slot() }}
-                                    <p>Wir freuen uns auf ihren Anruf.</p>
+                                    &lt;p&gt;Wir freuen uns auf ihren Anruf.&lt;/p&gt;
                                 </div>
                             {% endslot %}
                     </code>
