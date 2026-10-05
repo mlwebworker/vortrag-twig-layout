@@ -26,15 +26,15 @@
         <section>
             <h2>Was erwartet Euch</h2>
             <ul>
-                <li>Twig-Layout nutzen</li>
-                <li>Twig-Layout mit modernem CSS</li>
+                <li>Templateanpassungen</li>
+                <li>Twig-Layout mit modernem CSS nutzen</li>
                 <li>Sollte ich in Contao 5.7 das Twig-Layout einsetzen?</li>
             </ul>
         </section>
         <!-- Twig-Layout nutzen -->
         <section>
             <section>
-                <h2>Twig-Layout nutzen</h2>
+                <h2>Templateanpassungen</h2>
             </section>
 
             <!-- CSS einbinden -->
@@ -86,7 +86,7 @@
                         {{ include('@Contao/js_glightbox') }}
                     </code>
                 </pre>
-            </section>   
+            </section>
 
             <!-- zusätzliche Slots verwenden -->
             <section>
@@ -113,12 +113,12 @@
         <!-- Twig-Layout mit modernem CSS -->
         <section>
             <section>
-                <h2>Twig-Layout mit modernem CSS</h2>
+                <h2>Twig-Layout mit modernem CSS nutzen</h2>
             </section>
             <!-- einspaltig -->
             <section>
-               <h3>Einspaltiges Layout</h3>
-               <pre>
+                <h3>Einspaltiges Layout</h3>
+                <pre>
                    <code data-trim data-noescape>
                      body {
                         display    : grid;
@@ -134,7 +134,8 @@
                      }
                    </code>
                 </pre>
-
+            </section>
+            <section>
                 <pre class="fragment">
                    <code data-trim data-noescape>
                      header {
@@ -370,7 +371,7 @@
             <section>
                 <h3>FE-Page - Nachteile</h3>
                 <ul>
-                    <li>wird in Contao 6 als HTML5 definitiv wegfallen</li>
+                    <li>ist in Contao 6 als HTML5-Template nicht mehr verfügbar</li>
                     <li>unklar wie lange es in Contao 6 als Twig-Template noch verfügbar sein wird</li>
                     <li>Umstellung muss bei Wegfall des FE-Page-Templates zwangsweise erfolgen</li>
                     <li>Markup schon etwas angestaubt (z.B. z.T. viele für modernes CSS nicht benötigte Div-Tags)</li>
@@ -381,14 +382,14 @@
 
         <!-- Zusammenfassung -->
         <section>
-             <section>
+            <section>
                 <h2>Zusammenfassung</h2>
             </section>
             <section>
                 <ul>
                     <li>Twig-Layouts sind zukunftsfähig</li>
                     <li>generiertes Markup erleichtert den Einsatz von modernem CSS</li>
-                    <li>noch experimentell, können sich also noch ändern</li>
+                    <li>noch experimentell, Veränderungen sind möglich</li>
                     <li>Einsatz nicht um jeden Preis</li>
                 </ul>
             </section>
