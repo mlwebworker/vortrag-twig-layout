@@ -57,11 +57,13 @@
             <!-- JS einbinden -->
             <section>
                 <h3>Javascript einbinden</h3>
+                <h4>jQuery</h4>
                 <pre>
                     <code data-trim data-noescape>
                        &lt;script src="{{ asset('js/jquery.js', 'contao-components/jquery') }}"&gt;&lt;/script&gt;
                     </code>
                 </pre>
+                <h4 class="fragment">eigenes Javascript mit Cache-Busting</h4>
                 <pre class="fragment">
                     <code data-trim data-noescape>
                         &lt;script src="{{ asset('theme/js/control.js', 'contao_vfs.files') }}"&gt;&lt;/script&gt;
