@@ -119,6 +119,19 @@
                             {% endslot %}
                     </code>
                 </pre>
+                <pre class="fragment">
+                    <code data-trim data-noescape>
+                            {% slot cta %}
+                                &lt;div class="cta"&gt;
+                                    {{ slot() }}
+                                &lt;/div&gt;
+                            {% else %}
+                               <div class="cta">;
+                                    <p&gt;Alternativer Standardtext, wenn leer.&lt;/p&gt;
+                                </div>
+                            {% endslot %}
+                    </code>
+                </pre>
             </section>
         </section>
         <!-- Twig-Layout mit modernem CSS -->
@@ -163,45 +176,7 @@
                     </code>
                 </pre>
             </section>
-            <!-- einspaltig mit CTA -->
-            <section>
-                <h3>Einspaltiges Layout mit CTA</h3>
-                <pre>
-                   <code data-trim data-noescape>
-                     body {
-                        display    : grid;
-                        min-height : 100vh;
-                        @supports (min-height: 100dvh) {
-	                        min-height : 100dvh;
-                        }
-	                    grid-template-rows  : min-content 1fr min-content min-content;
-	                    grid-template-areas :
-                            "header"
-                            "main"
-                            "cta"
-                            "footer";
-                     }
-                   </code>
-                </pre>
-            </section>
-            <section>
-                <pre>
-                   <code data-trim data-noescape>
-                     header {
-                        grid-area: header;
-                     }
-                     main {
-                        grid-area: main;
-                     }
-                     footer {
-                        grid-area: footer;
-                     }
-                     .cta {
-                       grid-area: cta;
-                     }
-                   </code>
-                </pre>
-            </section>
+           
             <!-- mehrspaltig -->
             <section>
                 <h3>Layout mit Aside</h3>
@@ -228,7 +203,7 @@
                         "footer";
                         @media only screen and (min-width : 64em) {
                           grid-template-rows    : min-content 1fr min-content;
-                          grid-template-columns :minmax(0, 30rem) minmax(40rem, 1fr);
+                          grid-template-columns : minmax(0, 30rem) minmax(40rem, 1fr);
                           grid-template-areas   :
                           "header header"
                           "aside-left main"
@@ -262,7 +237,7 @@
                         "footer";
                         @media only screen and (min-width : 64em) {
                           grid-template-rows    : min-content 1fr min-content min-content;
-                          grid-template-columns :minmax(0, 30rem) minmax(40rem, 1fr);
+                          grid-template-columns : minmax(0, 30rem) minmax(40rem, 1fr);
                           grid-template-areas   :
                           "header header"
                           "aside-left main"
