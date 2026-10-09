@@ -104,32 +104,32 @@
                 <h3>zusätzliche Slots verwenden</h3>
                 <pre>
                     <code data-trim data-noescape>
-                            {% slot cta %}
-                                &lt;div class="cta"&gt;{{ slot() }}&lt;/div&gt;
-                            {% endslot %}
+                        {% slot cta %}
+                            &lt;div class="cta"&gt;{{ slot() }}&lt;/div&gt;
+                        {% endslot %}
                     </code>
                 </pre>
                 <pre class="fragment">
                     <code data-trim data-noescape>
-                            {% slot cta %}
-                                &lt;div class="cta"&gt;
-                                    {{ slot() }}
-                                    &lt;p&gt;Wir freuen uns auf ihren Anruf.&lt;/p&gt;
-                                &lt;/div&gt;
-                            {% endslot %}
+                        {% slot cta %}
+                            &lt;div class="cta"&gt;
+                                {{ slot() }}
+                                &lt;p&gt;Wir freuen uns auf ihren Anruf.&lt;/p&gt;
+                            &lt;/div&gt;
+                      {% endslot %}
                     </code>
                 </pre>
                 <pre class="fragment">
                     <code data-trim data-noescape>
-                            {% slot cta %}
-                                &lt;div class="cta"&gt;
-                                    {{ slot() }}
-                                &lt;/div&gt;
-                            {% else %}
-                               <div class="cta">;
-                                    <p&gt;Alternativer Standardtext, wenn leer.&lt;/p&gt;
-                                </div>
-                            {% endslot %}
+                        {% slot cta %}
+                            &lt;div class="cta"&gt;
+                                {{ slot() }}
+                            &lt;/div&gt;
+                        {% else %}
+                            &lt;div class="cta"&gt;
+                                &lt;p&gt;Alternativer Standardtext, wenn leer.&lt;/p&gt;
+                            &lt;/div&gt;
+                        {% endslot %}
                     </code>
                 </pre>
             </section>
